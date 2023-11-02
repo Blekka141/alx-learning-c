@@ -1,0 +1,70 @@
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+int check_digits(char *str);
+void print_error_and_exit();
+char *multiply(char *num1, char *num2);
+
+/**
+ * main - Entry point, multiplies two positive numbers
+ * @argc: Number of command line arguments
+ * @argv: Array containing the command line arguments
+ *
+ * Return: 0 on success, 98 on error
+ */
+int main(int argc, char *argv[])
+{
+    char *result;
+
+    // Check for correct argument count
+    if (argc != 3)
+        print_error_and_exit();
+
+    // Check if both arguments are positive numbers
+    if (!check_digits(argv[1]) || !check_digits(argv[2]))
+        print_error_and_exit();
+
+    // Calculate the multiplication of both numbers
+    result = multiply(argv[1], argv[2]);
+
+    // Check for errors in result
+    if (result == NULL)
+        print_error_and_exit();
+
+    // Print the result
+    printf("%s\n", result);
+
+    // Clean up and exit
+    free(result);
+    return (0);
+}
+
+/**
+ * check_digits - Checks if a string consists only of digits
+ * @str: The string to check
+ *
+ * Return: 1 if only digits, 0 otherwise
+ */
+int check_digits(char *str)
+{
+    while (*str)
+    {
+        if (!isdigit(*str))
+            return (0);
+        str++;
+    }
+    return (1);
+}
+
+/**
+ * print_error_and_exit - Prints an error message and exits with status 98
+ */
+void print_error_and_exit()
+{
+    printf("Error\n");
+    exit(98);
+}
+
+// You will need to implement or include the multiply function and
