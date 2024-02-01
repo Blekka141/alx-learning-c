@@ -18,4 +18,4 @@ i = 0;
 	}
 	return (s);
 }
-/*Bwave ICT */
+

@@ -15,4 +15,4 @@ int _atoi(char *s);
 int _putchar(char c);
 char *generate_password(void);
 
-#endif /*Bwave Bright*/
+#endif 
