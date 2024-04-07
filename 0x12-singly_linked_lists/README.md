@@ -1,25 +1,40 @@
-Requirements
-General
+# 0x12. C - Singly linked lists
 
-    Allowed editors: vi, vim, emacs
-    All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
-    All your files should end with a new line
-    A README.md file, at the root of the folder of the project is mandatory
-    Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-    You are not allowed to use global variables
-    No more than 5 functions per file
-    The only C standard library functions allowed are malloc, free and exit. Any use of functions like printf, puts, calloc, realloc etc… is forbidden
-    You are allowed to use _putchar
-    You don’t have to push _putchar.c, we will use our file. If you do it won’t be taken into account
-    In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
-    The prototypes of all your functions and the prototype of the function _putchar should be included in your header file called lists.h
-    Don’t forget to push your header file
-    All your header files should be include guarded
+## Overview
 
-More Info
+This project, running from November 16 to November 17, 2023, focuses on the implementation and understanding of singly linked lists in C programming. Achieving a perfect score across mandatory and optional evaluations, it emphasizes the practical and theoretical aspects of linked list structures.
 
-Please use this data structure for this project:
+## Learning Objectives
 
+Upon completion of this project, learners should be able to:
+
+- **Compare and Contrast**: Understand when and why to use linked lists over arrays.
+- **Implementation**: Know how to build and effectively utilize linked lists in data structure management.
+
+## Resources
+
+- **Linked Lists**: Comprehensive materials to understand the basic and advanced concepts of linked lists.
+- **Search Engines**: Utilization of Google and YouTube for supplementary learning materials.
+
+## Requirements
+
+- **Editors**: vi, vim, or emacs.
+- **Operating System**: Ubuntu 20.04 LTS.
+- **Compiler**: gcc using the options -Wall -Werror -Wextra -pedantic -std=gnu89.
+- **Code Style**: Adherence to Betty coding style.
+- **Restrictions**:
+  - No global variables.
+  - A maximum of 5 functions per file.
+  - Use only `malloc`, `free`, and `exit` from the C standard library.
+- **Output**:
+  - All functions must be prototype in `lists.h` and include-guarded.
+  - `_putchar` is provided for output, not to be pushed by students.
+
+## Struct Definition
+
+Use the following structure for linked list nodes in this project:
+
+```c
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -27,6 +42,7 @@ Please use this data structure for this project:
  * @next: points to the next node
  *
  * Description: singly linked list node structure
+ * for Holberton project
  */
 typedef struct list_s
 {
@@ -34,3 +50,29 @@ typedef struct list_s
     unsigned int len;
     struct list_s *next;
 } list_t;
+
+## Quiz 
+
+**Question #0**: What’s the “tail” of a linked list?
+- **Answer**: It’s the node with the pointer to the next equals to NULL.
+
+**Question #1**: What’s a node? (select all possible answers)
+- **Answer**: 
+  - It’s a structure with a pointer to the next node and value information.
+  - It’s a space allocated in memory.
+
+**Question #2**: Arrays Vs Linked Lists: select all true statements
+- **Answer**:
+  - We can add elements indefinitely to a linked list.
+  - We can easily remove an element from a Linked list.
+  - Array can contain as value a structure.
+  - Memory is aligned for an Array - each elements are back to back in the memory.
+  - Linked list can contain as value a structure.
+
+**Question #3**: What’s the “head” of a linked list?
+- **Answer**: It’s the first node.
+
+**Question #4**: In a singly linked list, what are possible directions to traverse it? (select all possible answers)
+- **Answer**:
+  - Forward.
+
